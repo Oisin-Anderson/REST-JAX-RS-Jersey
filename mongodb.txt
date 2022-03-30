@@ -1,0 +1,18 @@
+db.links.insert({title: 'google', url: 'google.com', tags: ['json', 'mongo', 'html']})
+db.links.insert({title: 'facebook', url: 'facebook.com', tags: ['xml', 'mongodb', 'html']})
+db.links.insert({title: 'youtube', url: 'youtube.com', tags: ['json', 'xml']})
+
+db.links.find({tags: 'json'})
+db.links.find({tags: 'mongodb'})
+
+db.links.find({tags: 'mongodb'}, {url:1})
+
+use music
+
+db.music.insert({album: 'Walls', artist: 'Kings of Leon', songs: [{name : 'Waste A Moment', duration: '100'}, {name : 'Reverand', duration: '98'}, {name : 'Around The World', duration: '127'}]})
+db.music.find()
+
+db.music.update({album: 'Walls'}, {$push: {songs: [{name: 'Oisin', duration: '190'}]}})
+
+db.music.find({album: 'Walls'}, {songs: [{name: 1}]})
+
